@@ -1,4 +1,4 @@
-Whitepaper
+Technical Report
 ==========
 
 ###I. Introduction
