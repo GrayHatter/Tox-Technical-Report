@@ -10,7 +10,7 @@ With the rise of government monitoring programs, Tox provides an easy-to-use app
             - Ensure the privacy of its users by using strong encryption methods
             - Scale with its userbase to allow for a distributed approach within the network
             - Provide an easy protocol to allow developers to create their own clients and have the mobility 
-              to be platform independant
+              to be platform independent
             - Embrace FOSS philosophies to cultivate an open development community for the future
       
       - What it Solves
