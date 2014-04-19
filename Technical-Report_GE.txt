@@ -1,6 +1,0 @@
-Tox Whitepaper, Ghetto Edition
-
-Introduction:
-
-Objective
-Tox brings encrypted messaging to the masses, including those living under state-sponsored surveillance and censorship, by means of a distributed network. A P2P connection cuts out the middleman, preventing conversations from being saved (and possibly read) by an unintended third-party.
