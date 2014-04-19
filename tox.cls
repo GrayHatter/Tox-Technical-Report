@@ -9,7 +9,7 @@
 \def\author#1		{\gdef\@author{#1}}
 \def\data#1			{\gdef\@data{#1}}
 
-\newcommand{\content}{
+\renewcommand{\maketitle}{
 	\begin{titlepage}
 		\begin{center}
 			\begin{figure}[h!]
@@ -21,15 +21,15 @@
 
 			\HRule \\[0.4cm]{
 				\huge \bfseries \@title\\[0.5cm]
-			}\\[0.7cm]
+			}\vspace{0.7cm}
 			
 			\begin{minipage}{0.9\textwidth}
-			    \begin{align:left}
+			    \begin{flushleft}
 			        \large
 			        \@abstract
 			        \newline
 			        \newline
-			    \end{align:left}
+			    \end{flushleft}
 			\end{minipage}
 			
 			\HRule \\[0cm]
