@@ -1,7 +1,17 @@
 \documentclass{tox}
 
-\usepackage[utf8]{inputenc}
 \usepackage{listings}
+\usepackage{ifxetex}
+
+\ifxetex
+    \usepackage{polyglossia}
+    \setmainlanguage{english}
+    \usepackage{fontspec}
+    \setmainfont{Linux Libertine O} % change that to what you like
+\else
+    \usepackage[english]{babel}
+    \usepackage[utf8]{inputenc}
+\fi
 
 \makeatletter
 
