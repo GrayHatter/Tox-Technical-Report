@@ -7,7 +7,6 @@
 
 \def\abstract#1     {\gdef\@abstract{#1}}
 \def\author#1		{\gdef\@author{#1}}
-\def\data#1			{\gdef\@data{#1}}
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
