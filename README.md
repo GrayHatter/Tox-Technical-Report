@@ -1,3 +1,5 @@
+Notice: This should be rewritten from scratch
+
 Technical Report
 ==========
 
