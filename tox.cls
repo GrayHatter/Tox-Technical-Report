@@ -2,6 +2,15 @@
 \ProcessOptions\LoadClass[a4paper,oneside]{article} 
 
 \RequirePackage{graphicx}
+\IfFileExists{ifxetex.sty}{\usepackage{ifxetex}}{\newif\ifxetex\xetexfalse}
+\ifxetex
+    \usepackage{fontspec}
+    \usepackage{polyglossia}
+    \setmainlanguage{english}
+\else
+    \usepackage[english]{babel}
+    \usepackage[utf8]{inputenc}
+\fi
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
