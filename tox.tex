@@ -1,8 +1,13 @@
 \documentclass{tox}
 
 \usepackage{ifxetex}
-\ifxetex{}
-  \usepackage{xltxtra}
+\ifxetex
+    \usepackage{fontspec}
+    \usepackage{polyglossia}
+    \setmainlanguage{english}
+\else
+    \usepackage[english]{babel}
+    \usepackage[utf8]{inputenc}
 \fi
 
 \begin{document}
