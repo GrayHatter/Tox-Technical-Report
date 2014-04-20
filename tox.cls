@@ -5,16 +5,16 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-\def\abstract#1     {\gdef\@abstract{#1}}
-\def\author#1		{\gdef\@author{#1}}
+\def\abstract#1 {\gdef\@abstract{#1}}
+\def\author#1   {\gdef\@author{#1}}
 
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 		\begin{center}
-			\begin{figure}[h!]
+			\begin{figure}[ht]
 				\begin{center}
 					\leavevmode
-					\includegraphics[scale=1, trim = 0mm 0mm 0mm 0mm, clip]{ToxLogo.png}
+					\includegraphics{ToxLogo.pdf}
 				\end{center}
 			\end{figure}
 
