@@ -12,6 +12,8 @@
     \usepackage[utf8]{inputenc}
 \fi
 
+\usepackage{amsmath,amssymb,amsthm}
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \def\abstract#1 {\gdef\@abstract{#1}}

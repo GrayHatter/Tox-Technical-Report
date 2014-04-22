@@ -18,15 +18,29 @@
 \maketitle
 
 % /g/ asked for math, leave it be here until we get some
-Division-with-remainder theorem (enjoy /g/)
-\newline
-\newline
-Given $$a \in \mathbb{Z}$$and $$d \in \mathbb{N}$$then there exist unique $$q,r \in \mathbb{Z}$$ such that $$a = qd + r$$ and $$0 <= r < d$$
-\newline
-Proof
-\newline
-Let q be the largest integer such that $$q <= a/d$$ and let $$r = a - qd$$ $$a = qd +r$$ $$qd <= a$$ $$0 <= a - qd = r$$ Since q uses the largest integer, $$q + 1 > a/d$$ $$qd + d > a$$ $$=> r = a -qd < d$$ Proving uniqueness, suppose $$a = q_1d + r_1$$ $$a = q_2d + r_2$$ for $$q_1,q_2 \in \mathbb{Z}$$ and $$r_1,r_2 \in {0,1,...,d-1}$$ and $$r_1 >= r_2$$ then $$0 <= r_1 -r_2 <= r_1 <= d -1$$ $$r_1 -r_2 = (a -q_1d) -(a -q_2d)$$ $$r_1 -r_2 = a -q_1d -a + q_2d = d(q_1 -q_2)$$ However, only multiple of d in $$0,1,..,d-1$$ is $$0$$ therefore $$r_1 -r_2 = 0$$ therefore $$q_2 -q_1 = 0$$
+\newtheorem{thm}{Theorem}
+\begin{thm}
+  Let $a\in\mathbb{Z}$ and $d\in\mathbb{N}\setminus\{0\}$.
+  Then there is exactly one $(q,r)\in\mathbb{Z}\times\mathbb{N}$ such that $a = qd+r$ and $r<d$.
+\end{thm}
 
-Page 1
+\begin{proof}
+  Let $q\in\mathbb{Z}$ maximal such that $q\leq a/d$ and $r=a-qd$.
+  Then $(q,r)$ satisfies the equation.
+  Furthermore $r<d$ since otherwise
+  \begin{align*}
+    (q+1)d \leq qd+r = a
+  \end{align*}
+  which contradicts the maximality of $q$.
+
+  Assume that $(\tilde q,\tilde r)$ satisfies the same conditions.
+  Without loss of generality we can assume $\tilde r\leq r$.
+  Then
+  \begin{align*}
+    0\leq |\tilde q-q|d = r-\tilde r \leq r < d.
+  \end{align*}
+  Hence $|\tilde q-q|\in\mathbb{N}$ is strictly smaller than $1$ and thus $\tilde q = q$.
+  It is clear that $\tilde r=r$.
+\end{proof}
 
 \end{document}
