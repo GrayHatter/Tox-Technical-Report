@@ -14,6 +14,8 @@
 
 \usepackage{amsmath,amssymb,amsthm}
 
+\renewcommand\qedsymbol{$\blacksquare$} % redefine Q.E.D. so it is filled
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \def\abstract#1 {\gdef\@abstract{#1}}
