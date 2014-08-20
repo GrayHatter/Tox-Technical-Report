@@ -13,6 +13,11 @@
 \fi
 
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{listings}
+
+\lstset{
+  language=C,                % choose the language of the code
+}
 
 \renewcommand\qedsymbol{$\blacksquare$} % redefine Q.E.D. so it is filled
 
