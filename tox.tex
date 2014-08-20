@@ -95,5 +95,39 @@ user along with the message specified in it.
 The user can then accept the request and add the other user to his friends list 
 or he can refuse it and simply discard the friend request.
 
+\subsection{Text Communications}
+
+Tox users have various ways of communication to online friends. The first is 
+basic text communication. Tox uses UTF-8 as the encoding for all text 
+transmitted through it. UTF-8 means extensive language support and support for 
+unicode smileys and other characters.
+
+Each Tox user has a nickname and a status that can be changed at will. They are 
+transmitted to friends every time a connection to them is established and to 
+all currently online friends when the user changes it.
+
+Tox messages can be sent as normal messages or actions (/me on IRC).
+
+\subsection{File Transfers}
+
+Tox supports sending files to online friends. Users can pause and resume files 
+when they are transmitted. If clients become disconnected while the transfer is 
+in progress then reconnect after, Tox supports resuming the file transfer.
+
+File transfers in Tox are much faster than other typical messaging software due 
+to the fact that it connects directly to other peers most of the time.
+
+\subsection{Audio/Video}
+
+Tox users can make audio and video calls to other Tox users. Call settings can 
+be modified during the call which means a user can stop sending video or audio 
+while a call is in progress. The video resolution can be changed dynamically 
+during a video call.
+
+\subsection{Conclusion}
+
+This introduction was meant to give the reader a quick high level overview of 
+Tox: the part that directly interacts with the user. The next section will deal 
+with how Tox works at a lower level.
 
 \end{document}
