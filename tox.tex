@@ -61,4 +61,39 @@ for (i = 0; i < ID_length; ++i)
 
 \end{lstlisting}
 
+\subsection{Friends}
+
+To add another Tox user as a friend, the user must first obtain their Tox ID. 
+The Tox ID can be transmitted across insecure channels or posted publicly. The 
+user must make sure however that the Tox ID he adds belongs to his friend and 
+not an impersonator.
+
+Each Tox instance contains a friends list. This is a list of added friends 
+which the user has added to his client. Tox will try to connect to everyone in 
+the friends list. In order to connect to a friend, the friend must have the 
+user in their friends list or else the connection will fail. Friends who the 
+user is connected to are shown as online, friends who are not connected are 
+shown as offline.
+
+Users who are not in the friends list of a certain user can not connect to him.
+
+There are two ways to add an entry to the friends list. The first is to add the 
+Tox ID of a Tox user and the second is to accept a friend request.
+
+\subsection{Friend Requests}
+
+When a Tox user adds a Tox ID, Tox sends a friend request to the Tox user 
+corresponding to the added ID. A friend requests contains the long term public 
+key of the user making the request, the nospam contained in the Tox ID and a 
+custom user specified message.
+
+When a Tox user receives a friend request, he checks if the nospam is valid (if 
+it matches the one he used to generate a Tox id). If it isn't valid, the friend 
+request is discarded. If it is valid, the friend request is presented to the 
+user along with the message specified in it.
+
+The user can then accept the request and add the other user to his friends list 
+or he can refuse it and simply discard the friend request.
+
+
 \end{document}
