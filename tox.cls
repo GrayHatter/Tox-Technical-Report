@@ -14,10 +14,10 @@
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{listings}
+\usepackage{tox}
+\usepackage{xcolor}
 
-\lstset{
-  language=C,                % choose the language of the code
-}
+\lstset{escapechar=@,style=customc} % choose the style for the programming language
 
 \renewcommand\qedsymbol{$\blacksquare$} % redefine Q.E.D. so it is filled
 
