@@ -14,6 +14,7 @@
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{listings}
+\usepackage[hidelinks]{hyperref}
 
 \lstset{
   language=C,                % choose the language of the code
