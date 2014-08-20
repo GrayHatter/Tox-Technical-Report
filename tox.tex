@@ -61,4 +61,73 @@ for (i = 0; i < ID_length; ++i)
 
 \end{lstlisting}
 
+\subsection{Friends}
+
+To add another Tox user as a friend, the user must first obtain their Tox ID. 
+The Tox ID can be transmitted across insecure channels or posted publicly. The 
+user must make sure however that the Tox ID he adds belongs to his friend and 
+not an impersonator.
+
+Each Tox instance contains a friends list. This is a list of added friends 
+which the user has added to his client. Tox will try to connect to everyone in 
+the friends list. In order to connect to a friend, the friend must have the 
+user in their friends list or else the connection will fail. Friends who the 
+user is connected to are shown as online, friends who are not connected are 
+shown as offline.
+
+Users who are not in the friends list of a certain user can not connect to him.
+
+There are two ways to add an entry to the friends list. The first is to add the 
+Tox ID of a Tox user and the second is to accept a friend request.
+
+\subsection{Friend Requests}
+
+When a Tox user adds a Tox ID, Tox sends a friend request to the Tox user 
+corresponding to the added ID. A friend requests contains the long term public 
+key of the user making the request, the nospam contained in the Tox ID and a 
+custom user specified message.
+
+When a Tox user receives a friend request, he checks if the nospam is valid (if 
+it matches the one he used to generate a Tox id). If it isn't valid, the friend 
+request is discarded. If it is valid, the friend request is presented to the 
+user along with the message specified in it.
+
+The user can then accept the request and add the other user to his friends list 
+or he can refuse it and simply discard the friend request.
+
+\subsection{Text Communications}
+
+Tox users have various ways of communication to online friends. The first is 
+basic text communication. Tox uses UTF-8 as the encoding for all text 
+transmitted through it. UTF-8 means extensive language support and support for 
+unicode smileys and other characters.
+
+Each Tox user has a nickname and a status that can be changed at will. They are 
+transmitted to friends every time a connection to them is established and to 
+all currently online friends when the user changes it.
+
+Tox messages can be sent as normal messages or actions (/me on IRC).
+
+\subsection{File Transfers}
+
+Tox supports sending files to online friends. Users can pause and resume files 
+when they are transmitted. If clients become disconnected while the transfer is 
+in progress then reconnect after, Tox supports resuming the file transfer.
+
+File transfers in Tox are much faster than other typical messaging software due 
+to the fact that it connects directly to other peers most of the time.
+
+\subsection{Audio/Video}
+
+Tox users can make audio and video calls to other Tox users. Call settings can 
+be modified during the call which means a user can stop sending video or audio 
+while a call is in progress. The video resolution can be changed dynamically 
+during a video call.
+
+\subsection{Conclusion}
+
+This introduction was meant to give the reader a quick high level overview of 
+Tox: the part that directly interacts with the user. The next section will deal 
+with how Tox works at a lower level.
+
 \end{document}
