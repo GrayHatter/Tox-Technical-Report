@@ -16,6 +16,7 @@
 \usepackage{listings}
 \usepackage{tox}
 \usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
 
 \lstset{escapechar=@,style=customc} % choose the style for the programming language
 
