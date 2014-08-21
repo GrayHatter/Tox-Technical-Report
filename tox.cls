@@ -33,7 +33,7 @@
 			\begin{figure}[ht]
 				\begin{center}
 					\leavevmode
-					\includegraphics{ToxLogo.pdf}
+					\includegraphics{tox_logo.pdf}
 				\end{center}
 			\end{figure}
 
