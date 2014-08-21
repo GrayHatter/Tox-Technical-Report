@@ -34,8 +34,8 @@ For exactly how it works read the NaCl docs.
 
 \subsection{Tox ID}
 
-What is referred to as the Tox ID is in fact the long term public key of that 
-Tox user with a nospam value and a checksum appended to it. The exact format is:
+The Tox ID is the long term public key of that Tox user with a nospam value and 
+a checksum appended to it. The exact format is:
 
 [NaCl crypto\_box() public key (32 bytes)][nospam (4 bytes)][checksum (2 bytes)]
 
@@ -44,13 +44,13 @@ Tox ID looks like:
 
 56A1ADE4B65B86BCD51CC73E2CD4E542179F47959FE3E0E21B4B0ACDADE51855D34D34D37CB5
 
-The nospam value is there to permit users from quickly changing their Tox ids 
+The nospam value is there to permit users from quickly changing their Tox IDs 
 without changing identities. How it works is explained later in the friend 
 request section.
 
-The checksum is a checksum to prevent users from adding mistyped or badly 
-copied Tox IDs. It is a simple XOR checksum. Code to compute the checksum from 
-a partial ID of ID\_length follows.
+The checksum prevents users from adding mistyped or badly copied Tox IDs. It is 
+a simple XOR checksum. Code to compute the checksum from a partial ID of 
+ID\_length follows.
 
 \begin{lstlisting}
 uint8_t checksum[2] = {0};
@@ -75,7 +75,7 @@ user in their friends list or else the connection will fail. Friends who the
 user is connected to are shown as online, friends who are not connected are 
 shown as offline.
 
-Users who are not in the friends list of a certain user can not connect to him.
+Users who are not in the friends list of a certain user cannot connect to him.
 
 There are two ways to add an entry to the friends list. The first is to add the 
 Tox ID of a Tox user and the second is to accept a friend request.
@@ -83,7 +83,7 @@ Tox ID of a Tox user and the second is to accept a friend request.
 \subsection{Friend Requests}
 
 When a Tox user adds a Tox ID, Tox sends a friend request to the Tox user 
-corresponding to the added ID. A friend requests contains the long term public 
+corresponding to the added ID. A friend request contains the long term public 
 key of the user making the request, the nospam contained in the Tox ID and a 
 custom user specified message.
 
@@ -106,7 +106,8 @@ Each Tox user has a nickname and a status that can be changed at will. They are
 transmitted to friends every time a connection to them is established and to 
 all currently online friends when the user changes it.
 
-Tox messages can be sent as normal messages or actions (/me on IRC).
+Tox messages can be sent as normal messages or as actions (the equivalent of 
+IRC's /me).
 
 \subsection{File Transfers}
 
