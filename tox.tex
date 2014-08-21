@@ -134,4 +134,41 @@ This introduction was meant to give the reader a quick high level overview of
 Tox: the part that directly interacts with the user. The next section will deal 
 with how Tox works at a lower level.
 
+\section{Deeper Into Tox}
+
+The Tox core can be broken down into 2 parts: The peer finding part and the 
+messenger part. The peer finding part takes care of finding the peer (friend) 
+we 
+want to establish a secure connection to and the messenger part takes care of 
+connecting to and communicating with the peer after the peer finding succeeds.
+
+\subsection{Peer Finding}
+
+The peer finding part has the purpose of finding peers inside the network. It 
+is the part that finds the friends in the friend list of the Tox client and 
+sends them the required information so that both can establish a secure 
+connection to each other.
+
+Peer finding has two parts: the onion and the DHT which work closely together.
+
+The Tox DHT is a UDP only DHT that Tox clients advertise themselves to with a 
+temporary public key called the DHT public key. The DHT public key is 
+regenerated every time the Tox client is restarted to prevent the tracking of 
+Tox clients inside the network.
+
+Because the DHT only works with temporary keys, there needed to be a way to 
+communicate to peers when all that was known was their real long term public 
+key. This part is named the onion. The onion is used to anonymously send and 
+receive friend requests and packets from friends containing what their current 
+DHT public key is along with some TCP relays they are currently connected to.
+
+Once the peer knows the DHT public key of a friend he queries the DHT then 
+finds and connects to the friend. In case the friend cannot be found in the DHT 
+Tox falls back to using TCP relays to connect to the friend by connecting to 
+the relays the friend is connected to and using them to relay data to the 
+friend.
+
+The peer finding succeeds when the Tox client has found the best way to send 
+data to the friend.
+
 \end{document}
