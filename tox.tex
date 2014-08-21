@@ -172,4 +172,216 @@ friend.
 The peer finding succeeds when the Tox client has found the best way to send 
 data to the friend.
 
+\subsection{Messenger}
+
+Once the peer finding succeeds, a secure connection to the friend is 
+established using the Tox protocol. The Tox protocol has perfect forward 
+secrecy and supports the padding of messages to obscure the length. It is 
+designed to be resistant to replay attacks and to prevent attackers from 
+preforming man in the middle attacks on it. All data sent with the protocol 
+is encrypted with crypto\_box() and is immune to attacks where the attacker 
+could modify the encrypted packet to modify the plain text. Exactly how it 
+works is explained later in this document.
+
+Unlike TCP, the Tox protocol does not accept a stream of data but instead 
+accepts packets of data. Sending both lossy and lossless packets is supported. 
+Lossless packets are lossless and are guaranteed to arrive in the order they 
+are sent. Lossy packets on the other hand might not arrive in the order they 
+are sent, might not even arrive at all or might even arrive more than once 
+because unlike lossless packets, they are lossy and therefore have no replay 
+protection.
+
+Every data related packet in Tox except audio and video data packets are 
+transmitted as lossless packets. Audio and video data packets are transmitted 
+as being lossy because low latency is preferred and small amounts of packet 
+loss are not an issue.
+
+The first byte of a packet sent over the Tox protocol determines their type. 
+Packet numbers 0 to 15 inclusively are reserved for internal use by the Tox 
+protocol. Packet numbers 16 to 191 inclusively and 255 are lossless packets. 
+Packet numbers 192 to 254 are lossy packets.
+
+What follows is a list of all currently valid Tox lossless packets that are 
+sent to friends over the Tox protocol.
+
+%put this in some other kind of format
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+16
+\\
+\hline
+Name: 
+&
+Alive
+\\
+\hline
+Size (Bytes):
+&
+1
+\\
+\hline
+Format:  
+&
+[byte (16)]
+\\
+\hline
+Description:  
+&
+Sent every 5 seconds to each friend. If none are received from a friend for 15 
+seconds, the connection times out.
+\\
+\hline
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+17
+\\
+\hline
+Name: 
+&
+Share Relays
+\\
+\hline
+Size (Bytes):
+&
+38 to 785
+\\
+\hline
+Format:  
+&
+[byte (17)][up to 16 nodes in DHT packed format] %add a link to packet format 
+                                                 %explanation here
+\\
+\hline
+Description:  
+&
+Sent every couple of minutes to every friend. They are the way to share TCP 
+relays are shared among friends.
+\\
+\hline
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+48
+\\
+\hline
+Name: 
+&
+Nickname
+\\
+\hline
+Size (Bytes):
+&
+2 to 129
+\\
+\hline
+Format:
+&
+[byte (48)][Nickname (byte array)]
+\\
+\hline
+Description:  
+&
+Used to send the nickname of the Tox user to friends. The nickname is a non null 
+terminated UTF-8 string of maximum length 128.
+\\
+\hline
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+49
+\\
+\hline
+Name: 
+&
+Status Message
+\\
+\hline
+Size (Bytes):
+&
+2 to 1008
+\\
+\hline
+Format:
+&
+[byte (49)][Status Message (byte array)]
+\\
+\hline
+Description:  
+&
+Used to send the status message of the Tox user to friends. The status message 
+is a non null terminated UTF-8 string of maximum length 1007.
+\\
+\hline
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+50
+\\
+\hline
+Name: 
+&
+User status
+\\
+\hline
+Size (Bytes):
+&
+2
+\\
+\hline
+Format:
+&
+[byte (50)][byte (User status)]
+\\
+\hline
+Description:  
+&
+Used to send the user status of the Tox user to friends (online (0), away (1), busy (2)). 
+\\
+\hline
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+\hline
+Packet id: 
+&
+51
+\\
+\hline
+Name: 
+&
+Typing
+\\
+\hline
+Size (Bytes):
+&
+2
+\\
+\hline
+Format:
+&
+[byte (51)][byte (typing status)]
+\\
+\hline
+Description:  
+&
+Used to send a change in typing status of the Tox user to friends (not typing (0), typing (non zero)). 
+\\
+\hline
+\end{tabular}
 \end{document}
