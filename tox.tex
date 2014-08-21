@@ -207,181 +207,110 @@ sent to friends over the Tox protocol.
 %put this in some other kind of format
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-16
-\\
-\hline
-Name: 
-&
-Alive
-\\
-\hline
-Size (Bytes):
-&
-1
-\\
-\hline
-Format:  
-&
-[byte (16)]
-\\
-\hline
-Description:  
-&
-Sent every 5 seconds to each friend. If none are received from a friend for 15 
-seconds, the connection times out.
-\\
-\hline
+Packet ID       &      16
+\\ \hline
+Name            &      Alive
+\\ \hline
+Size (bytes)    &      1
+\\ \hline
+Format          &      [byte (16)]
+\\ \hline
+Description     &      Sent every 5 seconds to each friend. If none are 
+                       received from a friend for 15 seconds, the connection 
+                       times out.
+\\ \hline
+
 \end{tabular}
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-17
+Packet ID       &      17
+\\ \hline
+Name            &      Share Relays
 \\
 \hline
-Name: 
-&
-Share Relays
-\\
-\hline
-Size (Bytes):
-&
-38 to 785
-\\
-\hline
-Format:  
-&
-[byte (17)][up to 16 nodes in DHT packed format] %add a link to packet format 
-                                                 %explanation here
-\\
-\hline
-Description:  
-&
-Sent every couple of minutes to every friend. They are the way to share TCP 
-relays are shared among friends.
-\\
-\hline
+Size (bytes)    &      38 to 785
+\\ \hline
+Format          &      [byte (17)][up to 16 nodes in DHT packed format]
+                       % add a link to packet format explanation here
+\\ \hline
+Description     &      Sent every couple of minutes to every friend. They are 
+                       the way to share TCP relays are shared among friends.
+\\ \hline
+
 \end{tabular}
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-48
-\\
-\hline
-Name: 
-&
-Nickname
-\\
-\hline
-Size (Bytes):
-&
-2 to 129
-\\
-\hline
-Format:
-&
-[byte (48)][Nickname (byte array)]
-\\
-\hline
-Description:  
-&
-Used to send the nickname of the Tox user to friends. The nickname is a non null 
-terminated UTF-8 string of maximum length 128.
-\\
-\hline
+Packet ID       &      48
+\\ \hline
+Name            &      Nickname
+\\ \hline
+Size (bytes)    &      2 to 129
+\\ \hline
+Format          &      [byte (48)][NickName            (byte array)]
+\\ \hline
+Description     &      Used to send the nickname of the Tox user to friends. 
+                       The nicknameis a non null terminated UTF-8 string of 
+                       maximum length 128.
+\\ \hline
+
 \end{tabular}
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-49
-\\
-\hline
-Name: 
-&
-Status Message
-\\
-\hline
-Size (Bytes):
-&
-2 to 1008
-\\
-\hline
-Format:
-&
-[byte (49)][Status Message (byte array)]
-\\
-\hline
-Description:  
-&
-Used to send the status message of the Tox user to friends. The status message 
-is a non null terminated UTF-8 string of maximum length 1007.
-\\
-\hline
+Packet ID       &      49
+\\ \hline
+Name            &      Status Message
+\\ \hline
+Size (bytes)    &      2 to 1008
+\\ \hline
+Format          &      [byte (49)][Status Message (byte array)]
+\\ \hline
+Description     &      Used to send the status message of the Tox user to 
+                       friends. The status message is a non null terminated 
+                       UTF-8 string of maximum length 1007.
+\\ \hline
+
 \end{tabular}
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-50
-\\
-\hline
-Name: 
-&
-User status
-\\
-\hline
-Size (Bytes):
-&
-2
-\\
-\hline
-Format:
-&
-[byte (50)][byte (User status)]
-\\
-\hline
-Description:  
-&
-Used to send the user status of the Tox user to friends (online (0), away (1), busy (2)). 
-\\
-\hline
+Packet ID       &      50
+\\ \hline
+Name            &      User status
+\\ \hline
+Size (bytes)    &      2
+\\ \hline
+Format          &      [byte (50)][byte (User status)]
+\\ \hline
+Description     &      Used to send the user status of the Tox user to friends 
+                       (online (0), away (1), busy (2)). 
+\\ \hline
 \end{tabular}
 
 \begin{tabular}[pos]{|l|p{9cm}|}
+
 \hline
-Packet id: 
-&
-51
-\\
-\hline
-Name: 
-&
-Typing
-\\
-\hline
-Size (Bytes):
-&
-2
-\\
-\hline
-Format:
-&
-[byte (51)][byte (typing status)]
-\\
-\hline
-Description:  
-&
-Used to send a change in typing status of the Tox user to friends (not typing (0), typing (non zero)). 
-\\
-\hline
+Packet ID       &      51
+\\ \hline
+Name            &      Typing
+\\ \hline
+Size (bytes)    &      2
+\\ \hline
+Format          &      [byte (51)][byte (typing status)]
+\\ \hline
+Description     &      Used to send a change in typing status of the Tox user 
+                       to friends (not typing (0), typing (non zero)). 
+\\ \hline
+
 \end{tabular}
+
 \end{document}
+
