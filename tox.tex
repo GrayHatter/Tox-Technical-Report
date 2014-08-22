@@ -312,5 +312,105 @@ Description     &      Used to send a change in typing status of the Tox user
 
 \end{tabular}
 
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      64
+\\ \hline
+Name            &      Message
+\\ \hline
+Size (bytes)    &      2 to 1373
+\\ \hline
+Format          &      [byte (64)][Message (byte array)]
+\\ \hline
+Description     &      Used to send text messages to friends. The message is 
+                       a non null UTF-8 string with a maximum length of 1372 bytes.
+\\ \hline
+
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      65
+\\ \hline
+Name            &      Action
+\\ \hline
+Size (bytes)    &      2 to 1373
+\\ \hline
+Format          &      [byte (64)][Action (byte array)]
+\\ \hline
+Description     &      Used to send text actions to friends. The action is 
+                       a non null UTF-8 string with a maximum length of 1372 bytes.
+\\ \hline
+
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      69
+\\ \hline
+Name            &      MSI
+\\ \hline
+Size (bytes)    &      ???
+\\ \hline
+Format          &      [byte (69)][???]
+\\ \hline
+Description     &      Used by toxav for initialising audio/video chats.
+\\ \hline
+
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      80
+\\ \hline
+Name            &      File Send Request
+\\ \hline
+Size (bytes)    &      ???
+\\ \hline
+Format          &      [byte (80)][???]
+\\ \hline
+Description     &      Used to start a file transfer.
+\\ \hline
+
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      81
+\\ \hline
+Name            &      File Send Control
+\\ \hline
+Size (bytes)    &      ???
+\\ \hline
+Format          &      [byte (81)][???]
+\\ \hline
+Description     &      Used to accept, pause, resume and cancel file transfers.
+\\ \hline
+
+\end{tabular}
+
+\begin{tabular}[pos]{|l|p{9cm}|}
+
+\hline
+Packet ID       &      82
+\\ \hline
+Name            &      File Data
+\\ \hline
+Size (bytes)    &      ???
+\\ \hline
+Format          &      [byte (82)][???]
+\\ \hline
+Description     &      Used to send actual file data in file transfers.
+\\ \hline
+
+\end{tabular}
+
+
+
 \end{document}
 
