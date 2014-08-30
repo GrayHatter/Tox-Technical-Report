@@ -29,8 +29,8 @@ Tox uses crypto\_box() from the NaCl crypto library for all the cryptography in
 Tox. Unless otherwise noted, all keys refer to keys generated with 
 crypto\_box\_keypair(), all encryption is done with crypto\_box() and all 
 decryption with crypto\_box\_open(). For performance purposes the functions to 
-precomputed the shared secret and encrypt and decrypt messages with it are used 
-extensively in Tox however this is not relevant to this document.
+precompute the shared secret and encrypt and decrypt messages with it are used 
+extensively in Tox; however, this is not relevant to this document.
 
 The function crypto\_box() provides fast public-key authenticated encryption. 
 For exactly how it works read the NaCl docs.
@@ -47,7 +47,7 @@ Tox ID looks like:
 
 56A1ADE4B65B86BCD51CC73E2CD4E542179F47959FE3E0E21B4B0ACDADE51855D34D34D37CB5
 
-The nospam value is there to permit users from quickly changing their Tox IDs 
+The nospam value is there to enable users to quickly change their Tox IDs 
 without changing identities. How it works is explained later in the friend 
 request section.
 
@@ -75,7 +75,7 @@ Each Tox instance contains a friends list. This is a list of added friends
 which the user has added to his client. Tox will try to connect to everyone in 
 the friends list. In order to connect to a friend, the friend must have the 
 user in their friends list or else the connection will fail. Friends who the 
-user is connected to are shown as online, friends who are not connected are 
+user is connected to are shown as online, while friends who are not connected are 
 shown as offline.
 
 Users who are not in the friends list of a certain user cannot connect to him.
@@ -87,7 +87,7 @@ Tox ID of a Tox user and the second is to accept a friend request.
 
 When a Tox user adds a Tox ID, Tox sends a friend request to the Tox user 
 corresponding to the added ID. A friend request contains the long term public 
-key of the user making the request, the nospam contained in the Tox ID and a 
+key of the user making the request, the nospam contained in the Tox ID, and a 
 custom user specified message.
 
 When a Tox user receives a friend request, he checks if the nospam is valid (if 
@@ -100,7 +100,7 @@ or he can refuse it and simply discard the friend request.
 
 \subsection{Text Communications}
 
-Tox users have various ways of communication to online friends. The first is 
+Tox users have various ways of communicating with online friends. The first is 
 basic text communication. Tox uses UTF-8 as the encoding for all text 
 transmitted through it. UTF-8 means extensive language support and support for 
 unicode smileys and other characters.
@@ -116,7 +116,7 @@ IRC's /me).
 
 Tox supports sending files to online friends. Users can pause and resume files 
 when they are transmitted. If clients become disconnected while the transfer is 
-in progress then reconnect after, Tox supports resuming the file transfer.
+in progress and then reconnect after, Tox supports resuming the file transfer.
 
 File transfers in Tox are much faster than other typical messaging software due 
 to the fact that it connects directly to other peers most of the time.
@@ -131,7 +131,7 @@ for video.
 
 \subsection{Conclusion}
 
-This introduction was meant to give the reader a quick high level overview of 
+This introduction was meant to give the reader a quick high-level overview of 
 Tox: the part that directly interacts with the user. The next section will deal 
 with how Tox works at a lower level.
 
@@ -152,7 +152,7 @@ connection to each other.
 
 Peer finding has two parts: the onion and the DHT which work closely together.
 
-The Tox DHT is a UDP only DHT that Tox clients advertise themselves to with a 
+The Tox DHT is a UDP-only DHT that Tox clients advertise themselves to with a 
 temporary public key called the DHT public key. The DHT public key is 
 regenerated every time the Tox client is restarted to prevent the tracking of 
 Tox clients inside the network.
@@ -238,7 +238,7 @@ Format          &      [byte (17)][up to 16 nodes in DHT packed format]
                        % add a link to packet format explanation here
 \\ \hline
 Description     &      Sent every couple of minutes to every friend. They are 
-                       the way to share TCP relays are shared among friends.
+                       the way TCP relays are shared among friends.
 \\ \hline
 
 \end{tabular}
@@ -255,7 +255,7 @@ Size (bytes)    &      2 to 129
 Format          &      [byte (48)][NickName            (byte array)]
 \\ \hline
 Description     &      Used to send the nickname of the Tox user to friends. 
-                       The nicknameis a non null terminated UTF-8 string of 
+                       The nickname is a non null terminated UTF-8 string of 
                        maximum length 128.
 \\ \hline
 
