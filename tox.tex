@@ -21,7 +21,7 @@ provide maximum security without penalizing performance.
 
 When one first starts a Tox client, a long term asymmetric keypair is created. 
 This keypair identifies the user uniquely. If a Tox user wants to connect to 
-another user, he needs to obtain their long term public key. 
+another user, they need to obtain their long term public key. 
 
 \subsection{Crypto}
 
@@ -68,7 +68,7 @@ for (i = 0; i < ID_length; ++i)
 
 To add another Tox user as a friend, the user must first obtain their Tox ID. 
 The Tox ID can be transmitted across insecure channels or posted publicly. The 
-user must make sure however that the Tox ID he adds belongs to his friend and 
+user must make sure however that the Tox ID they add belongs to his friend and 
 not an impersonator.
 
 Each Tox instance contains a friends list. This is a list of added friends 
@@ -78,7 +78,7 @@ user in their friends list or else the connection will fail. Friends who the
 user is connected to are shown as online, while friends who are not connected are 
 shown as offline.
 
-Users who are not in the friends list of a certain user cannot connect to him.
+Users who are not in the friends list of a certain user will not be able to connect to them.
 
 There are two ways to add an entry to the friends list. The first is to add the 
 Tox ID of a Tox user and the second is to accept a friend request.
@@ -90,13 +90,13 @@ corresponding to the added ID. A friend request contains the long term public
 key of the user making the request, the nospam contained in the Tox ID, and a 
 custom user specified message.
 
-When a Tox user receives a friend request, he checks if the nospam is valid (if 
-it matches the one he used to generate a Tox id). If it isn't valid, the friend 
+When a Tox user receives a friend request, they check if the nospam is valid (if 
+it matches the one they used to generate a Tox id). If it isn't valid, the friend 
 request is discarded. If it is valid, the friend request is presented to the 
 user along with the message specified in it.
 
 The user can then accept the request and add the other user to his friends list 
-or he can refuse it and simply discard the friend request.
+or they can refuse it and simply discard the friend request.
 
 \subsection{Text Communications}
 
@@ -163,7 +163,7 @@ key. This part is named the onion. The onion is used to anonymously send and
 receive friend requests and packets from friends containing what their current 
 DHT public key is along with some TCP relays they are currently connected to.
 
-Once the peer knows the DHT public key of a friend he queries the DHT then 
+Once the peer knows the DHT public key of a friend, they query the DHT then 
 finds and connects to the friend. In case the friend cannot be found in the DHT 
 Tox falls back to using TCP relays to connect to the friend by connecting to 
 the relays the friend is connected to and using them to relay data to the 
