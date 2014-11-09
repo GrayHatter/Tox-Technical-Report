@@ -21,7 +21,7 @@ provide maximum security without penalizing performance.
 
 When one first starts a Tox client, a long term asymmetric keypair is created. 
 This keypair identifies the user uniquely. If a Tox user wants to connect to 
-another user, they need to obtain their long term public key. 
+another user, they need to obtain a long term public key. 
 
 \subsection{Crypto}
 
@@ -66,19 +66,20 @@ for (i = 0; i < ID_length; ++i)
 
 \subsection{Friends}
 
-To add another Tox user as a friend, the user must first obtain their Tox ID. 
-The Tox ID can be transmitted across insecure channels or posted publicly. The 
-user must make sure however that the Tox ID they add belongs to his friend and 
+To add another Tox user as a friend, one must first obtain their Tox ID. The
+Tox ID can be transmitted across insecure channels or posted publicly. One 
+must then make sure, however, that the Tox ID belongs to the friend and 
 not an impersonator.
 
 Each Tox instance contains a friends list. This is a list of added friends 
-which the user has added to his client. Tox will try to connect to everyone in 
+that the user has added to their client. Tox will try to connect to everyone in 
 the friends list. In order to connect to a friend, the friend must have the 
-user in their friends list or else the connection will fail. Friends who the 
-user is connected to are shown as online, while friends who are not connected are 
+user in their friends list or else the connection will fail. Friends to whom the 
+user is connected are shown as online, while friends who are not connected are 
 shown as offline.
 
-Users who are not in the friends list of a certain user will not be able to connect to them.
+Users who are not in the friends list of a certain user will not be able to connect
+to that user.
 
 There are two ways to add an entry to the friends list. The first is to add the 
 Tox ID of a Tox user and the second is to accept a friend request.
@@ -95,7 +96,7 @@ it matches the one they used to generate a Tox id). If it isn't valid, the frien
 request is discarded. If it is valid, the friend request is presented to the 
 user along with the message specified in it.
 
-The user can then accept the request and add the other user to his friends list 
+The user can then accept the request and add the other user to their friends list 
 or they can refuse it and simply discard the friend request.
 
 \subsection{Text Communications}
