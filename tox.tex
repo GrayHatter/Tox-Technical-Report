@@ -91,8 +91,8 @@ corresponding to the added ID. A friend request contains the long term public
 key of the user making the request, the nospam contained in the Tox ID, the checksum and a 
 custom user specified message.
 
-When a Tox receives a friend request, it checks whether the nospam is valid (if 
-it matches the one used to generate a Tox ID). If it isn't valid, the friend 
+When Tox receives a friend request, it checks whether the nospam is valid (if 
+it matches the one used in the users current Tox ID). If it isn't valid, the friend 
 request is discarded automatically. If it is valid, the friend request is presented to the 
 user along with the message specified in it.
 
