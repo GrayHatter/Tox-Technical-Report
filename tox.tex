@@ -37,7 +37,7 @@ For exactly how it works read the NaCl docs.
 
 \subsection{Tox ID}
 
-The Tox ID is the long term public key of a Tox user with a nospam value and 
+The Tox ID contains the long term public key of a Tox user with a nospam value and 
 a checksum appended to it. The exact format is:
 
 [NaCl crypto\_box() public key (32 bytes)][nospam (4 bytes)][checksum (2 bytes)]
@@ -91,8 +91,8 @@ corresponding to the added ID. A friend request contains the long term public
 key of the user making the request, the nospam contained in the Tox ID, the checksum and a 
 custom user specified message.
 
-When Tox receives a friend request, it checks whether the nospam is valid (if 
-it matches the one used in the users current Tox ID). If it isn't valid, the friend 
+When Tox receives a friend request, it checks whether the nospam is valid (i.e. whether 
+it matches the one used in the user's current Tox ID). If it isn't valid, the friend 
 request is discarded automatically. If it is valid, the friend request is presented to the 
 user along with the message specified in it.
 
@@ -103,7 +103,7 @@ or they can refuse it and simply discard the friend request.
 
 Tox users have various ways of communicating with online friends. The first is 
 basic text communication. Tox uses UTF-8 as the encoding for all text 
-transmitted through it. UTF-8 provides extensive language support and support for 
+transmitted through it. Using UTF-8 provides extensive language support and support for 
 unicode smileys and other characters.
 
 Each Tox user has a nickname and a status that can be changed at will. They are 
@@ -116,7 +116,7 @@ IRC's /me).
 \subsection{File Transfers}
 
 Tox supports sending files to online friends. Users can pause and resume files 
-as they are being transmitted. If clients become disconnected while the transfer is 
+as they are being transmitted. If a client becomes disconnected while the transfer is 
 in progress and then reconnect afterwards, Tox supports resuming the file transfer.
 
 File transfers in Tox are much faster than other typical messaging software due 
