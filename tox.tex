@@ -37,7 +37,7 @@ For exactly how it works read the NaCl docs.
 
 \subsection{Tox ID}
 
-The Tox ID is the long term public key of that Tox user with a nospam value and 
+The Tox ID contains the long term public key of a Tox user with a nospam value and 
 a checksum appended to it. The exact format is:
 
 [NaCl crypto\_box() public key (32 bytes)][nospam (4 bytes)][checksum (2 bytes)]
@@ -71,7 +71,7 @@ Tox ID can be transmitted across insecure channels or posted publicly. One
 must then make sure, however, that the Tox ID belongs to the friend and 
 not an impersonator.
 
-Each Tox instance contains a friends list. This is a list of added friends 
+Each Tox instance contains a friends list. This is a list of friends 
 that the user has added to their client. Tox will try to connect to everyone in 
 the friends list. In order to connect to a friend, the friend must have the 
 user in their friends list or else the connection will fail. Friends to whom the 
@@ -88,12 +88,12 @@ Tox ID of a Tox user and the second is to accept a friend request.
 
 When a Tox user adds a Tox ID, Tox sends a friend request to the Tox user 
 corresponding to the added ID. A friend request contains the long term public 
-key of the user making the request, the nospam contained in the Tox ID, and a 
+key of the user making the request, the nospam contained in the Tox ID and a 
 custom user specified message.
 
-When a Tox user receives a friend request, they check if the nospam is valid (if 
-it matches the one they used to generate a Tox id). If it isn't valid, the friend 
-request is discarded. If it is valid, the friend request is presented to the 
+When Tox receives a friend request, it checks whether the nospam is valid (i.e. whether 
+it matches the one used in the user's current Tox ID). If it isn't valid, the friend 
+request is discarded automatically. If it is valid, the friend request is presented to the 
 user along with the message specified in it.
 
 The user can then accept the request and add the other user to their friends list 
@@ -103,7 +103,7 @@ or they can refuse it and simply discard the friend request.
 
 Tox users have various ways of communicating with online friends. The first is 
 basic text communication. Tox uses UTF-8 as the encoding for all text 
-transmitted through it. UTF-8 means extensive language support and support for 
+transmitted through it. Using UTF-8 provides extensive language support and support for 
 unicode smileys and other characters.
 
 Each Tox user has a nickname and a status that can be changed at will. They are 
@@ -116,8 +116,8 @@ IRC's /me).
 \subsection{File Transfers}
 
 Tox supports sending files to online friends. Users can pause and resume files 
-when they are transmitted. If clients become disconnected while the transfer is 
-in progress and then reconnect after, Tox supports resuming the file transfer.
+as they are being transmitted. If a client becomes disconnected while the transfer is 
+in progress and then reconnect afterwards, Tox supports resuming the file transfer.
 
 File transfers in Tox are much faster than other typical messaging software due 
 to the fact that it connects directly to other peers most of the time.
@@ -141,15 +141,15 @@ with how Tox works at a lower level.
 The Tox core can be broken down into 2 parts: The peer finding part and the 
 messenger part. The peer finding part takes care of finding the peer (friend) 
 we 
-want to establish a secure connection to and the messenger part takes care of 
+want to establish a secure connection with and the messenger part takes care of
 connecting to and communicating with the peer after the peer finding succeeds.
 
 \subsection{Peer Finding}
 
 The peer finding part has the purpose of finding peers inside the network. It 
 is the part that finds the friends in the friend list of the Tox client and 
-sends them the required information so that both can establish a secure 
-connection to each other.
+sends them the required information so that they can establish a secure 
+connection with each other.
 
 Peer finding has two parts: the onion and the DHT which work closely together.
 
